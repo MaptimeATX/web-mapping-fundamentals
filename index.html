@@ -62,6 +62,7 @@ window.onload = function() {
         for (var k = 0; k < s.length; k++) s[k].style.display = 'none';
         e.style.display = 'inline';
         e.style.fontSize = i + 'px';
+
         if (e.firstChild && e.firstChild.nodeName === 'IMG') {
             document.body.style.backgroundImage = 'url(' + e.firstChild.src + ')';
             e.firstChild.style.display = 'none';
@@ -76,6 +77,7 @@ window.onload = function() {
             e.offsetHeight > window.innerHeight) && i >= 0) {
             e.style.fontSize = (i -= 2) + 'px';
         }
+        e.style.lineHeight = (i + 20) + 'px';
         e.style.marginTop = ((window.innerHeight - e.offsetHeight) / 2) + 'px';
         if (window.location.hash !== n) window.location.hash = n;
         document.title = e.textContent || e.innerText;
@@ -224,7 +226,7 @@ window.onload = function() {
 
 <div>http://<em>tile.openstreetmap.org</em>/4/2/6.png -- this is the name of the tile server.</div>
 
-<div>http://tile.openstreetmap.org/<em>4</em>/2/6.png -- this is the z value, or the zoom level.</div>
+<div>http://tile.openstreetmap.org/<em>4</em>/2/6.png -- this is the <em>z</em> value, or the zoom level.</div>
 
 <div>http://tile.openstreetmap.org/4/<em>2/6</em>.png -- This is the <em>x/y</em> value, or the place in the grid where the tile lives.</div>
 
@@ -274,8 +276,11 @@ window.onload = function() {
 <div>Add interaction</div>
 
 <div>
-  Credits:<br>
-  Lots of content from <a href="https://github.com/maptime/anatomy-of-a-web-map">github.com/maptime/anatomy-of-a-web-map</a>
+  Credits:
+  <ul>
+    <li><a href="https://github.com/maptime/anatomy-of-a-web-map">github.com/maptime/anatomy-of-a-web-map</a></li>
+    <li><a href="https://www.mapbox.com/foundations/how-web-maps-work/">https://www.mapbox.com/foundations/how-web-maps-work/</a></li>
+  </ul>
 </div>
 
 <div><img src="/img/leaflet_code.png">Let's Make a Map!</div>
