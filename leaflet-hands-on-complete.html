@@ -18,11 +18,17 @@
 /* LEAFLET CODE STARTS HERE! */
 
 var ourMap = L.map('map');
+
 var baseLayer = L.tileLayer(
     'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 );
 baseLayer.addTo(ourMap);
-ourMap.setView([30.3, -97.8], 10);
+
+ourMap.setView([30.3, -97.7], 10);
+
+var ourMarker = L.marker([30.27, -97.741]);
+ourMarker.addTo(ourMap);
+ourMarker.bindPopup('#maptimeATX');
 
 /* LEAFLET CODE STOPS HERE!  */
     </script>
