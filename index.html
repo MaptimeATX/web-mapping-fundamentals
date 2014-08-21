@@ -48,7 +48,7 @@ div.imageText {
 }
 
 div.dark-text {
-  color: #2e2e2e;
+  color: #6e6e6e;
 }
 </style><script type='text/javascript'>
 window.onload = function() {
@@ -159,12 +159,12 @@ window.onload = function() {
 
 <div>
   First there were Desktop Maps like <a href="http://esri.com">esri's</a> ArcView
-  <img style="width:500px;" src="img/map-history/ArcViewGIS.png">
+  <img style="width:800px;" src="img/map-history/ArcViewGIS.png">
 </div>
 
 <div>
   (which was later replaced by ArcMap)
-  <img style="width:600px;" src="img/map-history/1-arcGIS.jpg">
+  <img style="width:800px;" src="img/map-history/1-arcGIS.jpg">
 </div>
 
 <div class="dark-text"><img src="img/map-history/2-Ridgefield-CT-Mapquest-out.jpg">In 1996 <a href="http://mapquest.com">MapQuest</a> launched their web service</div>
@@ -175,7 +175,7 @@ window.onload = function() {
 
 <div>In 2005 <a href="http://maps.google.com">Google Maps</a> <em>changed</em> the game</div>
 
-<div><img src="img/map-history/3-old-google-maps-1.JPG">Smooth scrolling & zooming</div>
+<div><img src="img/map-history/3-old-google-maps-1.JPG">Smooth scrolling &amp; zooming</div>
 
 <div>What was the big change?</div>
 
@@ -191,49 +191,53 @@ window.onload = function() {
 
 <div>So what's so special about <em>tiles</em>?</div>
 
-<div>All tiles<br>=<br>same size! 256x256 pixels<br>same boundaries<img src="img/tiles.gif"></div>
+<div>An image for the entire world at multiple scales would be <em>HUGE</em></div>
 
-<div>Tiles could be of a road map, a satellite photo, or any other spatially-referenced image</div>
+<div>Tiles are <em>small</em> 256x256-pixel images placed next to each other to look like one <em>large</em> image</div>
 
-<div><img src="img/tiles-loading.gif">All these little tiles load <em>way faster</em> than one big map.</div>
+<div><img src="img/tiles-loading.gif">All these little tiles load <em>way faster</em> than one big map</div>
 
-<div>Web maps like this load the tiles that are on your screen. If the map is “smart,” it will pre-load tiles outside of the screen, along the top, bottom, left, and right.</div>
+<div>Different <em>zoom levels</em> for different amounts of <em>detail</em></div>
 
-<div><img src="img/slippy-map.gif">This kind of map is colloquially called a <em>slippy map</em></div>
+<div>Tiles are arranged in a <em>grid</em> for each <em>zoom level</em></div>
 
-<!-- TODO: describe this better, grid, zoom-level pyramid -->
-<div>The tiles are divided in <em>zoom levels</em></div>
+<div class="dark-text"><img src="img/tiles/zoom0.png">Zoom level 0:<br> <em>one</em> tile for the world</div>
 
-<div>Each <em>zoom level</em> has its own set of tiles!</div>
+<div>With each additional zoom level, the number of tiles increases <em>exponentially</em>.</div>
 
-<div><img src="img/tiles/zoom0.png"><em>Zoom level 0: one tile for the world.</em></div>
+<div class="dark-text"><img src="img/tiles/zoom1.png">Zoom level 1:<br> <em>4 tiles</em> for the world</div>
 
-<div>With each additional zoom level, the number of tiles increases exponentially.</div>
+<div><img src="img/tiles/zoom1.png"></div>
 
-<div><img src="img/tiles/zoom1.png"><em>Zoom level 1: 4 tiles for the world.</em></div>
+<div>Zoom level 2: <em>16 tiles</em><br>Zoom level 3: <em>64 tiles</em></div>
 
-<div><img src="img/tiles/zoom2-3-4-5.png"><em>Zoom level 2, 3, 4, 5</em></div>
+<div><img src="img/tiles/zoom2-3-4-5.png"></div>
 
-<div><img src="img/tiles/zoom13.png"><em>Zoom level 13</em></div>
+<div><img src="img/tiles/zoom13.png">Zoom level 13:<br> <em>67,108,864 tiles</em></div>
 
-<div>Tiles are <em>rendered</em> in advance (usually) then stored in a cache</div>
-
-<div>Map tiles are just images on the web, so you can link to them individually.</div>
+<div>Map tiles are just images on the web, so you can link to them individually</div>
 
 <div>For example: <a href="http://tile.openstreetmap.org/4/2/6.png">http://tile.openstreetmap.org/4/2/6.png</a></div>
 
-<div>In order to understand how this works, let's break down the URL.</div>
+<div>In order to understand how this works, let's break down the URL</div>
 
-<div>http://<em>tile.openstreetmap.org</em>/4/2/6.png -- this is the name of the tile server.</div>
+<div>http://<em>tile.openstreetmap.org</em>/4/2/6.png -- this is the name of the tile server</div>
 
-<div>http://tile.openstreetmap.org/<em>4</em>/2/6.png -- this is the <em>z</em> value, or the zoom level.</div>
+<div>http://tile.openstreetmap.org/<em>4</em>/2/6.png -- this is the <em>z</em> value, or the <em>zoom level</em></div>
 
-<div>http://tile.openstreetmap.org/4/<em>2/6</em>.png -- This is the <em>x/y</em> value, or the place in the grid where the tile lives.</div>
+<div>http://tile.openstreetmap.org/4/<em>2/6</em>.png -- This is the <em>x/y</em> value, or the place in the grid where the tile lives</div>
 
-<div>Google maps use the <em>Mercator projection</em>, which was designed for sailors BUT works well for flat maps.</div>
+<div>All tiles have the same boundaries<img src="img/tiles.gif"></div>
+
+<div><em>Mapping Libraries</em> do the work of positioning the tiles for you and handling interactions</div>
+
+<div>There are many, such as <a href="https://developers.google.com/maps/web/">Google Maps API</a>, <a href="https://developers.arcgis.com/javascript/">Esri Javascript API</a>, <a href="http://openlayers.org/">OpenLayers</a></div>
+
+<div><img src="img/leaflet.png"><a href="http://leafletjs.com">Leaflet</a></div>
+
+<div>Web maps use the <em>Mercator projection</em>, which was designed for sailors BUT works well for flat maps</div>
 
 <div><a href="http://commons.wikimedia.org/wiki/File:1855_Colton_Map_of_the_World_on_Mercator_Projection_-_Geographicus_-_WorldMercator-colton-1855.jpg"><img src="img/mercator.jpg"></a></div>
-
 
 <div>
   <img src="img/detour1.png">
@@ -244,36 +248,46 @@ window.onload = function() {
 
 <div>A Map is <em>Flat</em></div>
 
-<div>DOH!</div>
+<div>A sphere's surface cannot be represented on a plane without distortion - Gauss</div>
+
+<div>Mercator is <em>conformal</em> - preserves direction, but clobbers area</div>
+
+<div><img src="img/mercator2.jpg">Constant direction as straight line</div>
 
 <div>
-  TODO: TMCW Content on Mercator Projection
-
-  - quote that it will never be perfect (show curved surface on flat)
-  - preserves conformity (locally looks right - right angles)
-  - but there are tradeoffs
-  - doesn't preserve size (show image)
+  <img style="width:100%;" src="img/Tissot_mercator.png">
+  Image by <a href="http://en.wikipedia.org/wiki/Mercator_projection#mediaviewer/File:Tissot_mercator.png">Stefan Kuhn</a>
 </div>
 
+<div>Because of how web maps are used, Mercator is a good choice of projection</div>
+
+<div>Otherwise the angles of your streets would be all <em>goofy</em></div>
+
+<div>(Actually a special Google-developed type of Mercator called 'Web Mercator' is used)</div>
 
 <div>
   End of Detour
   <img src="img/end-detour.png">
 </div> 
 
-<div>
-  So we have tiles
-  which usually form a <em>Base Map</em>
-</div>
+<div>So we have tiles which usually form a <em>Base Layer</em></div>
 
 <div>We can also have <em>Vectors</em>!</div>
 
-<div>
-  Points, lines, polygons
-  OH MY
-</div>
+<div>Points, lines, polygons</div>
 
-<div>Add interaction</div>
+<div>OH MY</div>
+
+<div>Vectors are drawn on top of the tiles and add <em>interaction</em></div>
+
+<div><img src="img/vectors.png"></div>
+
+<div>Wrapping up:</div>
+<div><em>Tiles</em> - images that make the map</div>
+<div><em>Vectors</em> - graphics on top of the map</div>
+<div><em>Mapping Library</em> - code that positions the tiles and draws the vectors</div>
+<div>All in your <em>Web Browser</em></div>
+<div>Sweet!</div>
 
 <div>
   Credits:
