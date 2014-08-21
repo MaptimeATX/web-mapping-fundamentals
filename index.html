@@ -46,6 +46,10 @@ div.center {
 div.imageText {
   text-shadow:0px 0px 5px rgba(0,0,0,0.2);
 }
+
+div.dark-text {
+  color: #2e2e2e;
+}
 </style><script type='text/javascript'>
 window.onload = function() {
     var s = document.getElementsByTagName('div'), ti;
@@ -104,11 +108,11 @@ window.onload = function() {
 };
 </script></head><body>
 
-<div>Web Mapping Fundamentals</div>
+<div>Web Mapping <em>Fundamentals</em></div>
 
 <div>
   url: <a href="http://bit.do/M49S">http://bit.do/M49S</a>
-  
+
   src: <a href="http://bit.do/M49Z">http://bit.do/M49Z</a>
 </div>
 
@@ -123,43 +127,120 @@ window.onload = function() {
 
 <div>But not on paper</div>
 
-<div>And not on a globe</div>
+<div>And not in a desktop application</div>
 
-<div>On the Internet</div>
+<div>On the Internet, accessible via browser</div>
 
-<div>Flat, not a 3D globe</div>
+<div>like</div>
 
-<div>Usually interactive</div>
+<div><img src="/img/google-map.png"><a href="http://maps.google.com">GoogleMaps</a></div>
 
-<div>Comprised of TILES</div>
+<div><img src="/img/osm.png"><a href="http://openstreetmap.org">OpenStreetMap</a></div>
+
+<div><img src="/img/google-earth.png">Flat, not a digital globe like <a href="https://www.google.com/earth/">Google Earth</a></div>
+
+<div><img src="/img/slippy-map.gif">Usually interactive</div>
+
+<div>
+  Comprised of <em>TILES</em>
+  <img src="/img/tiles.gif">
+</div>
 
 <div>Tiles?</div>
 
 <div>
-  <img src="http://pixabay.com/static/uploads/photo/2012/04/28/19/28/sign-44161_640.png">
-
-  History Digression
+  <img src="/img/detour1.png">
+  History Detour
+  (somewhat accurate)
   >>>
 </div>
 
-<div>Original MapQuest</div>
-
-<div>Page Reloads</div>
-
-<div>:(</div>
-
-<div>Google Maps</div>
-
-<div>OMGGGGGGGGGGGG!!!!!</div>
-
 <div>
-  Projection Digression
-  >>>>>>
+  First there were Desktop Maps like <a href="http://esri.com">esri's</a> ArcView
+  <img style="width:500px;" src="/img/map-history/ArcViewGIS.png">
 </div>
 
-<div>The Earth is Round</div>
+<div>
+  (which was later replaced by ArcMap)
+  <img style="width:600px;" src="/img/map-history/1-arcGIS.jpg">
+</div>
 
-<div>A Map is Flat</div>
+<div class="dark-text"><img src="/img/map-history/2-Ridgefield-CT-Mapquest-out.jpg">In 1996 <a href="http://mapquest.com">MapQuest</a> launched their web service</div>
+
+<div>Directions! Online! Whoa!</div>
+
+<div>But it was pretty <em>slow</em>, required <em>full page reloads</em> to scroll or zoom, and was aligned to <em>specific boundaries</em></div>
+
+<div>In 2005 <a href="http://maps.google.com">Google Maps</a> <em>changed</em> the game</div>
+
+<div><img src="/img/map-history/3-old-google-maps-1.JPG">Smooth scrolling & zooming</div>
+
+<div>What was the big change?</div>
+
+<div>
+  It was the <em>TILE</em>
+  <img src="/img/tiles.gif">
+</div>
+
+<div>
+  End of Detour
+  <img src="/img/end-detour.png">
+</div>  
+
+<div>So what's so special about <em>tiles</em>?</div>
+
+<div>All tiles<br>=<br>same size! 256x256 pixels<br>same boundaries<img src="/img/tiles.gif"></div>
+
+<div>Tiles could be of a road map, a satellite photo, or any other spatially-referenced image</div>
+
+<div><img src="/img/tiles-loading.gif">All these little tiles load <em>way faster</em> than one big map.</div>
+
+<div>Web maps like this load the tiles that are on your screen. If the map is “smart,” it will pre-load tiles outside of the screen, along the top, bottom, left, and right.</div>
+
+<div><img src="/img/slippy-map.gif">This kind of map is colloquially called a <em>slippy map</em></div>
+
+<!-- TODO: describe this better, grid, zoom-level pyramid -->
+<div>The tiles are divided in <em>zoom levels</em></div>
+
+<div>Each <em>zoom level</em> has its own set of tiles!</div>
+
+<div><img src="/img/tiles/zoom0.png"><em>Zoom level 0: one tile for the world.</em></div>
+
+<div>With each additional zoom level, the number of tiles increases exponentially.</div>
+
+<div><img src="/img/tiles/zoom1.png"><em>Zoom level 1: 4 tiles for the world.</em></div>
+
+<div><img src="/img/tiles/zoom2-3-4-5.png"><em>Zoom level 2, 3, 4, 5</em></div>
+
+<div><img src="/img/tiles/zoom13.png"><em>Zoom level 13</em></div>
+
+<div>Tiles are <em>rendered</em> in advance (usually) then stored in a cache</div>
+
+<div>Map tiles are just images on the web, so you can link to them individually.</div>
+
+<div>For example: <a href="http://tile.openstreetmap.org/4/2/6.png">http://tile.openstreetmap.org/4/2/6.png</a></div>
+
+<div>In order to understand how this works, let's break down the URL.</div>
+
+<div>http://<em>tile.openstreetmap.org</em>/4/2/6.png -- this is the name of the tile server.</div>
+
+<div>http://tile.openstreetmap.org/<em>4</em>/2/6.png -- this is the z value, or the zoom level.</div>
+
+<div>http://tile.openstreetmap.org/4/<em>2/6</em>.png -- This is the <em>x/y</em> value, or the place in the grid where the tile lives.</div>
+
+<div>Google maps use the <em>Mercator projection</em>, which was designed for sailors BUT works well for flat maps.</div>
+
+<div><a href="http://commons.wikimedia.org/wiki/File:1855_Colton_Map_of_the_World_on_Mercator_Projection_-_Geographicus_-_WorldMercator-colton-1855.jpg"><img src="/img/mercator.jpg"></a></div>
+
+
+<div>
+  <img src="/img/detour1.png">
+  Projection Detour
+</div>
+
+<div>The Earth is <em>Round</em></div>
+
+<div>A Map is <em>Flat</em></div>
 
 <div>DOH!</div>
 
@@ -172,22 +253,18 @@ window.onload = function() {
   - doesn't preserve size (show image)
 </div>
 
-<div>
-  <<<<<<
-  Back to Map Digression
-</div>
 
 <div>
-  <<<
-  Back to Web Maps
-</div>
+  End of Detour
+  <img src="/img/end-detour.png">
+</div> 
 
 <div>
   So we have tiles
-  which usually form a *Base Map*
+  which usually form a <em>Base Map</em>
 </div>
 
-<div>We can also have *Vectors*!</div>
+<div>We can also have <em>Vectors</em>!</div>
 
 <div>
   Points, lines, polygons
@@ -197,18 +274,10 @@ window.onload = function() {
 <div>Add interaction</div>
 
 <div>
-  Interaction Digression
-  >>>
+  Credits:<br>
+  Lots of content from <a href="https://github.com/maptime/anatomy-of-a-web-map">github.com/maptime/anatomy-of-a-web-map</a>
 </div>
 
-<div>
-  UTF Grids
-  Vector Tiles
-  ...
-</div>
-
-
-
-
+<div><img src="/img/leaflet_code.png">Let's Make a Map!</div>
 
 </body></html>
