@@ -50,6 +50,22 @@ div.imageText {
 div.dark-text {
   color: #2e2e2e;
 }
+
+.leaflet-tutorial {
+  margin-top: 0px;
+  padding: 0 0 0 0;
+  height: 100%;
+}
+
+.leaflet-tutorial img {
+  height: 100%;
+  width: auto;
+}
+
+.leaflet-tutorial pre {
+  background-color: #222;
+}
+
 </style><script type='text/javascript'>
 window.onload = function() {
     var s = document.getElementsByTagName('div'), ti;
@@ -187,7 +203,7 @@ window.onload = function() {
 <div>
   End of Detour
   <img src="img/end-detour.png">
-</div>  
+</div>
 
 <div>So what's so special about <em>tiles</em>?</div>
 
@@ -259,7 +275,7 @@ window.onload = function() {
 <div>
   End of Detour
   <img src="img/end-detour.png">
-</div> 
+</div>
 
 <div>
   So we have tiles
@@ -284,5 +300,194 @@ window.onload = function() {
 </div>
 
 <div><img src="img/leaflet_code.png">Let's Make a Map!</div>
+
+<div>To start us off: <a href="http://bit.do/M7Aj">http://bit.do/M7Aj</a></div>
+
+<div class="leaflet-tutorial">
+  <img src=img/leaflet-hands-on/base.png>
+</div>
+
+<div class="leaflet-tutorial">
+  <img src=img/leaflet-hands-on/doctype.png>
+</div>
+
+<div class="leaflet-tutorial">
+  <img src=img/leaflet-hands-on/html.png>
+</div>
+
+<div class="leaflet-tutorial">
+  <img src=img/leaflet-hands-on/head.png>
+</div>
+
+<div class="leaflet-tutorial">
+  <img src=img/leaflet-hands-on/body.png>
+</div>
+
+<div class="leaflet-tutorial">
+  <img src=img/leaflet-hands-on/body-and-maps.png>
+</div>
+
+<div class="leaflet-tutorial">
+  <img src=img/leaflet-hands-on/leaflet-css.png>
+</div>
+
+<div class="leaflet-tutorial">
+  <img src=img/leaflet-hands-on/custom-style.png>
+</div>
+
+<div class="leaflet-tutorial">
+  <img src=img/leaflet-hands-on/leaflet-js.png>
+</div>
+
+<div class="leaflet-tutorial">
+  <img src=img/leaflet-hands-on/map-div.png>
+</div>
+
+<div class="leaflet-tutorial">
+  <img src=img/leaflet-hands-on/custom-script.png>
+</div>
+
+<div>
+  Let's start writing that.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>
+var ourMap = <em>L.map(</em>'map'<em>)</em>;</pre>
+  Create a Leaflet map.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>
+var ourMap = L.map(<em>'map'</em>);</pre>
+  At the element with id="map".
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>
+<em>var ourMap =</em> L.map('map');</pre>
+  And store the map as a variable called ourMap.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>
+var baseLayer = L.tileLayer(
+    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+);</pre>
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>
+var baseLayer = <em>L.tileLayer(</em>
+    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+<em>)</em>;</pre>
+  Create a tile layer.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>
+var baseLayer = L.tileLayer(
+    <em>'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'</em>
+);</pre>
+  We'll use basic OpenStreetMap tiles.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>
+<em>var baseLayer</em> = L.tileLayer(
+    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+);</pre>
+  And store this tile layer as a variable called baseLayer.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre><em>baseLayer</em>.addTo(ourMap);</pre>
+  Take that <em>base layer</em> and add it to our map.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>baseLayer.<em>addTo</em>(ourMap);</pre>
+  Take that base layer and <em>add it to</em> our map.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>baseLayer.addTo(<em>ourMap</em>);</pre>
+  Take that base layer and add it to <em>our map</em>.
+</div>
+
+<div>
+  Let's see how that looks.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>
+var ourMap = L.map('map');
+var baseLayer = L.tileLayer(
+    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+);
+baseLayer.addTo(ourMap);</pre>
+</div>
+
+<div>
+  But there's more.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>ourMap.setView([30.3, -97.8]);</pre>
+  Take our map and set the view area to be centered on Austin.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre><em>ourMap</em>.setView([30.3, -97.8]);</pre>
+  Take <em>our map</em> and set the view area to be centered on Austin.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>ourMap.<em>setView</em>([30.3, -97.8]);</pre>
+  Take our map and <em>set the view area</em> to be centered on Austin.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>ourMap.setView(<em>[30.3, -97.8]</em>);</pre>
+  Take our map and set the view area to be <em>centered on Austin</em>.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>ourMap.setView([<em>30.3</em>, -97.8]);</pre>
+  <em>
+    Latitude.
+  </em>
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>ourMap.setView([30.3, <em>-97.8</em>]);</pre>
+  <em>
+    Longitude.
+  </em>
+</div>
+
+<div>
+  Enhance
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>ourMap.setView([30.3, -97.8]<em>, 10</em>);</pre>
+  Take our map, set the view area to be centered on Austin, and zoom in to <em>tile level 10</em>.
+</div>
+
+<div>
+  All together now.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>
+var ourMap = L.map('map');
+var baseLayer = L.tileLayer(
+    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
+);
+baseLayer.addTo(ourMap);
+ourMap.setView([30.3, -97.8], 10);</pre>
+</div>
+
 
 </body></html>
