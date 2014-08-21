@@ -450,34 +450,34 @@ baseLayer.addTo(ourMap);</pre>
 </div>
 
 <div class="leaflet-tutorial">
-  <pre>ourMap.setView([30.3, -97.8]);</pre>
+  <pre>ourMap.setView([30.3, -97.7]);</pre>
   Take our map and set the view area to be centered on Austin.
 </div>
 
 <div class="leaflet-tutorial">
-  <pre><em>ourMap</em>.setView([30.3, -97.8]);</pre>
+  <pre><em>ourMap</em>.setView([30.3, -97.7]);</pre>
   Take <em>our map</em> and set the view area to be centered on Austin.
 </div>
 
 <div class="leaflet-tutorial">
-  <pre>ourMap.<em>setView</em>([30.3, -97.8]);</pre>
+  <pre>ourMap.<em>setView</em>([30.3, -97.7]);</pre>
   Take our map and <em>set the view area</em> to be centered on Austin.
 </div>
 
 <div class="leaflet-tutorial">
-  <pre>ourMap.setView(<em>[30.3, -97.8]</em>);</pre>
+  <pre>ourMap.setView(<em>[30.3, -97.7]</em>);</pre>
   Take our map and set the view area to be <em>centered on Austin</em>.
 </div>
 
 <div class="leaflet-tutorial">
-  <pre>ourMap.setView([<em>30.3</em>, -97.8]);</pre>
+  <pre>ourMap.setView([<em>30.3</em>, -97.7]);</pre>
   <em>
     Latitude.
   </em>
 </div>
 
 <div class="leaflet-tutorial">
-  <pre>ourMap.setView([30.3, <em>-97.8</em>]);</pre>
+  <pre>ourMap.setView([30.3, <em>-97.7</em>]);</pre>
   <em>
     Longitude.
   </em>
@@ -488,8 +488,79 @@ baseLayer.addTo(ourMap);</pre>
 </div>
 
 <div class="leaflet-tutorial">
-  <pre>ourMap.setView([30.3, -97.8]<em>, 10</em>);</pre>
+  <pre>ourMap.setView([30.3, -97.7]<em>, 10</em>);</pre>
   Take our map, set the view area to be centered on Austin, and zoom in to <em>tile level 10</em>.
+</div>
+
+<div>
+  Add points on the map?
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>var ourMarker = <em>L.marker(</em>[30.27, -97.741]<em>)</em>;</pre>
+  Create a <em>marker</em>. That's what points on the map are called.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>var ourMarker = L.marker([<em>30.27</em>, -97.741]);</pre>
+  <em>
+    Latitude.
+  </em>
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>var ourMarker = L.marker([30.27, <em>-97.741</em>]);</pre>
+  <em>
+    Longitude.
+  </em>
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>var <em>ourMarker</em> = L.marker([30.27, -97.741]);</pre>
+  Store it as a variable called <em>ourMarker</em>
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>var ourMarker = L.marker([30.27, -97.741]);
+<em>ourMarker</em>.addTo(ourMap);</pre>
+  <em>Take our marker</em> and add it to our map.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>var ourMarker = L.marker([30.27, -97.741]);
+ourMarker.<em>addTo(</em>ourMap<em>)</em>;</pre>
+  Take our marker <em>and add it</em> to our map.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>var ourMarker = L.marker([30.27, -97.741]);
+ourMarker.addTo(<em>ourMap</em>);</pre>
+  Take our marker and add it <em>to our map</em>.
+</div>
+
+<div>
+  Popup text!
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>var ourMarker = L.marker([30.27, -97.741]);
+ourMarker.addTo(ourMap);
+<em>ourMarker</em>.bindPopup('#maptimeATX');</pre>
+  Take <em>our marker</em> and bind some popup text to it.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>var ourMarker = L.marker([30.27, -97.741]);
+ourMarker.addTo(ourMap);
+ourMarker.<em>bindPopup(</em>'#maptimeATX'<em>)</em>;</pre>
+  Take our marker and <em>bind</em> some popup text to it.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>var ourMarker = L.marker([30.27, -97.741]);
+ourMarker.addTo(ourMap);
+ourMarker.bindPopup(<em>'#maptimeATX'</em>);</pre>
+  Take our marker and bind some <em>popup text</em> to it.
 </div>
 
 <div>
@@ -503,7 +574,10 @@ var baseLayer = L.tileLayer(
     'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 );
 baseLayer.addTo(ourMap);
-ourMap.setView([30.3, -97.8], 10);</pre>
+ourMap.setView([30.3, -97.7], 10);
+var ourMarker = L.marker([30.27, -97.741]);
+ourMarker.addTo(ourMap);
+ourMarker.bindPopup('#maptimeATX');</pre>
 </div>
 
 
