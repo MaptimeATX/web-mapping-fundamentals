@@ -416,7 +416,23 @@ var baseLayer = <em>L.tileLayer(</em>
 var baseLayer = L.tileLayer(
     <em>'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'</em>
 );</pre>
-  We'll use basic OpenStreetMap tiles.
+  We'll use basic OpenStreetMap tiles. This string is a template for how Leaflet will ask for tiles from a server.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>
+var baseLayer = L.tileLayer(
+    'http://{s}.tile.openstreetmap.org/<em>{z}</em>/<em>{x}</em>/<em>{y}</em>.png'
+);</pre>
+  These are placeholders for the tile <em>z</em>, <em>x</em>, and <em>y</em> coordinates we talked about a while ago. Leaflet will replace these with real values when you pan/zoom around.
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>
+var baseLayer = L.tileLayer(
+    'http://<em>{s}</em>.tile.openstreetmap.org/{z}/{x}/{y}.png'
+);</pre>
+  This is another placeholder. It gets replaced with letters (a, b, c, d). This spreads the image requests across a few domains so the tiles can load faster.
 </div>
 
 <div class="leaflet-tutorial">
@@ -424,7 +440,7 @@ var baseLayer = L.tileLayer(
 <em>var baseLayer</em> = L.tileLayer(
     'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
 );</pre>
-  And store this tile layer as a variable called baseLayer.
+  Store this tile layer as a variable called baseLayer.
 </div>
 
 <div class="leaflet-tutorial">
