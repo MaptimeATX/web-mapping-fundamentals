@@ -126,6 +126,11 @@ window.onload = function() {
 };
 </script></head><body>
 
+<div>
+wifi: <em>MakerSquare</em>
+pass: <em>workhardplayhard</em>
+</div>
+
 <div>Web Mapping <em>Fundamentals</em></div>
 
 <div>
@@ -370,6 +375,11 @@ window.onload = function() {
 
 <div class="leaflet-tutorial">
   <pre>
+var ourMap = L.map('map');</pre>
+</div>
+
+<div class="leaflet-tutorial">
+  <pre>
 var ourMap = <em>L.map(</em>'map'<em>)</em>;</pre>
   Create a Leaflet map.
 </div>
@@ -423,7 +433,7 @@ var baseLayer = L.tileLayer(
 </div>
 
 <div class="leaflet-tutorial">
-  <pre>baseLayer.<em>addTo</em>(ourMap);</pre>
+  <pre>baseLayer.<em>addTo(</em>ourMap<em>)</em>;</pre>
   Take that base layer and <em>add it to</em> our map.
 </div>
 
@@ -432,64 +442,38 @@ var baseLayer = L.tileLayer(
   Take that base layer and add it to <em>our map</em>.
 </div>
 
-<div>
-  Let's see how that looks.
+<div class="leaflet-tutorial">
+  <pre><em>ourMap</em>.setView([30.3, -97.7], 10);</pre>
+  Take <em>our map</em> and set the view area to be centered on Austin with zoom level 10.
 </div>
 
 <div class="leaflet-tutorial">
-  <pre>
-var ourMap = L.map('map');
-var baseLayer = L.tileLayer(
-    'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
-);
-baseLayer.addTo(ourMap);</pre>
-</div>
-
-<div>
-  But there's more.
+  <pre>ourMap.<em>setView(</em>[30.3, -97.7], 10<em>)</em>;</pre>
+  Take our map and <em>set the view area</em> to be centered on Austin with zoom level 10.
 </div>
 
 <div class="leaflet-tutorial">
-  <pre>ourMap.setView([30.3, -97.7]);</pre>
-  Take our map and set the view area to be centered on Austin.
+  <pre>ourMap.setView(<em>[30.3, -97.7]</em>, 10);</pre>
+  Take our map and set the view area to be <em>centered on Austin</em> with zoom level 10.
 </div>
 
 <div class="leaflet-tutorial">
-  <pre><em>ourMap</em>.setView([30.3, -97.7]);</pre>
-  Take <em>our map</em> and set the view area to be centered on Austin.
-</div>
-
-<div class="leaflet-tutorial">
-  <pre>ourMap.<em>setView</em>([30.3, -97.7]);</pre>
-  Take our map and <em>set the view area</em> to be centered on Austin.
-</div>
-
-<div class="leaflet-tutorial">
-  <pre>ourMap.setView(<em>[30.3, -97.7]</em>);</pre>
-  Take our map and set the view area to be <em>centered on Austin</em>.
-</div>
-
-<div class="leaflet-tutorial">
-  <pre>ourMap.setView([<em>30.3</em>, -97.7]);</pre>
+  <pre>ourMap.setView([<em>30.3</em>, -97.7], 10);</pre>
   <em>
     Latitude.
   </em>
 </div>
 
 <div class="leaflet-tutorial">
-  <pre>ourMap.setView([30.3, <em>-97.7</em>]);</pre>
+  <pre>ourMap.setView([30.3, <em>-97.7</em>], 10);</pre>
   <em>
     Longitude.
   </em>
 </div>
 
-<div>
-  Enhance
-</div>
-
 <div class="leaflet-tutorial">
-  <pre>ourMap.setView([30.3, -97.7]<em>, 10</em>);</pre>
-  Take our map, set the view area to be centered on Austin, and zoom in to <em>tile level 10</em>.
+  <pre>ourMap.setView([30.3, -97.7], <em>10</em>);</pre>
+  Take our map and set the view area to be centered on Austin with <em>zoom level 10</em>.
 </div>
 
 <div>
@@ -516,7 +500,7 @@ baseLayer.addTo(ourMap);</pre>
 </div>
 
 <div class="leaflet-tutorial">
-  <pre>var <em>ourMarker</em> = L.marker([30.27, -97.741]);</pre>
+  <pre><em>var ourMarker</em> = L.marker([30.27, -97.741]);</pre>
   Store it as a variable called <em>ourMarker</em>
 </div>
 
@@ -578,7 +562,12 @@ ourMap.setView([30.3, -97.7], 10);
 var ourMarker = L.marker([30.27, -97.741]);
 ourMarker.addTo(ourMap);
 ourMarker.bindPopup('#maptimeATX');</pre>
+
+Add your own markers. Or whatever you want. Have fun.
 </div>
 
+<div>
+  Thanks!
+</div>
 
 </body></html>
